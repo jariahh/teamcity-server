@@ -17,7 +17,6 @@ sudo mkdir /srv/TeamCity
 # create user
 sudo useradd -m teamcity
 sudo chown -R teamcity /srv/TeamCity
-sudo chown -R teamcity /srv/.BuildServer
 
 # create init.d script
 sudo wget https://gist.githubusercontent.com/sandcastle/9282638/raw/teamcity-init.sh -O /etc/init.d/teamcity
@@ -26,4 +25,3 @@ sudo update-rc.d teamcity defaults
 
 # ensure owership
 sudo chown -R teamcity /srv/TeamCity
-sudo chown -R teamcity /srv/.BuildServer
