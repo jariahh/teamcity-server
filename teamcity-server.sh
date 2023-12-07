@@ -28,6 +28,12 @@ sudo update-rc.d teamcity defaults
 sudo mkdir -p /srv/.BuildServer/lib/jdbc
 sudo mkdir -p /srv/.BuildServer/config
 
+sudo wget https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-j-8.1.0.zip mysql-connector-j-8.1.0.zip
+sudo unzip mysql-connector-j-8.1.0.zip
+sudo mv mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar /srv/.BuildServer//lib/jdbc/
+sudo rm -rf mysql-connector-j-8.1.0
+sudo rm -rf mysql-connector-j-8.1.0.zip
+
 # ensure owership
 sudo chown -R teamcity /srv/TeamCity
 sudo chown -R teamcity /srv/.BuildServer
