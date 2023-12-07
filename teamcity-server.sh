@@ -13,6 +13,7 @@ sudo wget -c https://download.jetbrains.com/teamcity/TeamCity-2023.11.tar.gz -O 
 sudo tar -xvf /tmp/TeamCity-2023.11.tar.gz -C /srv
 sudo rm -rf /tmp/TeamCity-2023.11.tar.gz
 sudo mkdir /srv/TeamCity
+sudo mkdir /srv/.BuildServer
 
 # create user
 sudo useradd -m teamcity
@@ -23,5 +24,10 @@ sudo wget https://gist.githubusercontent.com/sandcastle/9282638/raw/teamcity-ini
 sudo chmod 775 /etc/init.d/teamcity
 sudo update-rc.d teamcity defaults
 
+
+sudo mkdir -p /srv/.BuildServer/lib/jdbc
+sudo mkdir -p /srv/.BuildServer/config
+
 # ensure owership
 sudo chown -R teamcity /srv/TeamCity
+sudo chown -R teamcity /srv/.BuildServer
