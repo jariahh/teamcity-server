@@ -2,22 +2,16 @@
 
 cd /
 
-sudo mkdir /srv
-
 # install server dependencies
 sudo apt-get update
 sudo apt-get install -y openjdk-7-jre-headless
 sudo apt-get install -y curl
 
-# install build agent dependencies
-sudo apt-get install -y mercurial
-sudo apt-get install -y git
-
 # install team city
 sudo wget -c https://download.jetbrains.com/teamcity/TeamCity-2023.11.tar.gz -O /tmp/TeamCity-2023.11.tar.gz
 sudo tar -xvf /tmp/TeamCity-2023.11.tar.gz -C /srv
 sudo rm -rf /tmp/TeamCity-2023.11.tar.gz
-sudo mkdir /srv/.BuildServer
+sudo mkdir /srv/TeamCity
 
 # create user
 sudo useradd -m teamcity
