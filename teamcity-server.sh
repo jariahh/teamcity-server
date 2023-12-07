@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /
+sudo mkdir /srv
 
 # install server dependencies
 sudo apt-get update
